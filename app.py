@@ -41,7 +41,7 @@ if __name__ == '__main__':
         if movie_select == '--Select--':
             st.write('Select a movie')
         else:
-            n = st.number_input('Number of movies:', min_value=5+1, max_value=20, step=1)
+            n = st.number_input('Number of movies:', min_value=5, max_value=20, step=1)
             genres = data[movies.index(movie_select)]
             test_point = genres
             table = [film for film in knn(test_point, n+1) if film[0] != movie_select]
