@@ -11,7 +11,7 @@ genres_all_movies = [df.loc[i]['genres'].split('|') for i in df.index]
 # Find the list of genres of all movies in alphabetical order
 genres = sorted(list(set([item for sublist in genres_all_movies for item in sublist])))
 
-
+df = df.drop_duplicates(subset='movie_title', keep='first')
 # Initialize lists for movie data as well as titles
 full_data = list()
 movie_titles = list()
